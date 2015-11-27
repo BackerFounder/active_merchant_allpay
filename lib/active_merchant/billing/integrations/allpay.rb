@@ -50,6 +50,20 @@ module ActiveMerchant #:nodoc:
           end
         end
 
+        def self.tradeinfo_url
+          mode = ActiveMerchant::Billing::Base.integration_mode
+          case mode
+            when :production
+              'https://payment.allpay.com.tw/Cashier/QueryTradeInfo'
+            when :development
+              'http://payment-stage.allpay.com.tw/Cashier/QueryTradeInfo'
+            when :test
+              'http://payment-stage.allpay.com.tw/Cashier/QueryTradeInfo'
+            else
+              raise StandardError, "Integration mode set to an invalid value: #{mode}"
+          end
+        end
+
         def self.refund_url
           mode = ActiveMerchant::Billing::Base.integration_mode
           case mode

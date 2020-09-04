@@ -9,7 +9,7 @@ It has been tested on Rails 4.1.6 successfully.
 
 Add this line to your application's Gemfile:
 
-    gem 'activemerchant', "~> 1.43.3"
+    gem 'activemerchant', "~> 1.60"
     gem 'active_merchant_allpay', '>=0.1.2'
 
 And then execute:
@@ -71,7 +71,7 @@ Now support three payment methods:
 
   # 3. CVS (convenience store)
   ActiveMerchant::Billing::Integrations::Allpay::PAYMENT_CVS
-  
+
   # 4. Alipay
   ActiveMerchant::Billing::Integrations::Allpay::PAYMENT_ALIPAY
 ```
@@ -115,7 +115,7 @@ Also need a notification action when Allpay service notifies your server; it loo
 ```
 
 ## Troublechooting
-If you get a error "undefined method \`payment\_service\_for\`", you can add following configurations to initializers/allpay.rb. 
+If you get a error "undefined method \`payment\_service\_for\`", you can add following configurations to initializers/allpay.rb.
 ```
 require "active_merchant/billing/integrations/action_view_helper"
 ActionView::Base.send(:include, ActiveMerchant::Billing::Integrations::ActionViewHelper)
@@ -129,7 +129,7 @@ $("input[name=authenticity_token]").remove();
 </script>
 ```
 It's caused from payment\_service\_for helper function when generating by [offsite_payments](https://github.com/Shopify/offsite_payments) gem (offsite\_payments/lib/offsite\_payments/action\_view\_helper.rb)
-  
+
 
 ## Upgrade Notes
 

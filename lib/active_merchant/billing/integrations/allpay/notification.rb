@@ -4,7 +4,7 @@ module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
     module Integrations #:nodoc:
       module Allpay
-        class Notification < ActiveMerchant::Billing::Integrations::Notification
+        class Notification < OffsitePayments::Notification
 
           def status
             if rtn_code == '1'

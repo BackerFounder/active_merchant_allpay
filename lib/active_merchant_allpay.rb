@@ -1,3 +1,5 @@
+require "money"
+require "openssl"
 require "active_merchant_allpay/version"
 require "active_merchant"
 

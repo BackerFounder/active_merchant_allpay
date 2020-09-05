@@ -7,7 +7,7 @@ module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
     module Integrations #:nodoc:
       module Allpay
-        class Helper < ActiveMerchant::Billing::Integrations::Helper
+        class Helper < OffsitePayments::Helper
 
           ### 常見介面
 
